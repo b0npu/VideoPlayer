@@ -58,7 +58,7 @@ class MainActivity extends AppCompatActivity with TypedFindView {
     * SDカードの動画ファイル(mp4ファイル)を読み込んでGridViewにサムネイルを表示し
     * サムネイルを選択すると動画を再生する
     * GridViewへのサムネイルの配置はGridViewAdapter(BaseAdapterを継承したサブクラス)を
-    * 使うのでGridViewにGridViewAdapterをセットしてサムネイルを表示する
+    * 使うのでGridViewにGridViewAdapterを設置してサムネイルを表示する
     */
   private def viewVideoThumbnail: Unit = {
 

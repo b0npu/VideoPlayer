@@ -14,7 +14,6 @@ import android.widget.{MediaController, VideoView}
   *
   * アプリの画面を生成するonCreateメソッドでMainActivityからIntentを受取り
   * GridViewで選択された動画ファイル(mp4ファイル)を再生する
-  * 動画の再生と停止のためにOnCompletionListenerとOnPreparedListenerも継承する
   */
 class VideoPlayerActivity extends AppCompatActivity with TypedFindView {
 
@@ -22,7 +21,7 @@ class VideoPlayerActivity extends AppCompatActivity with TypedFindView {
     * アプリの画面を生成
     *
     * アプリを起動するとonCreateが呼ばれてActivityが初期化される
-    * Intentを使って選択された動画ファイル(mp4ファイル)のIDを取得し
+    * 選択された動画ファイル(mp4ファイル)のIDをIntentから取得し
     * VideoViewで動画を再生する
     */
   override def onCreate(savedInstanceState: Bundle): Unit = {
