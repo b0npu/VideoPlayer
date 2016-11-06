@@ -1,4 +1,4 @@
-# PictureGallery
+# VideoPlayer
 My practice App to learn Scala on Android
 
 ## Demo
