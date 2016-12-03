@@ -25,11 +25,9 @@ class MainActivity extends AppCompatActivity with TypedFindView {
     *
     * requestPermissionsメソッドで権限を要求した際に
     * コールバックメソッドのonRequestPermissionsResultメソッドに渡す定数を定義
-    * VideoPlayerActivityへの移動に使うstartActivityForResultメソッドに渡す定数も定義
     * (自クラスで使うだけのフィールドはprivateにして明示的に非公開にしてます)
     */
   private val REQUEST_READ_STORAGE_PERMISSION_CODE: Int = 0x01
-  private val VIDEO_PLAYER_REQUEST_CODE: Int = 0x02
 
   /**
     * アプリの画面を生成
@@ -69,7 +67,7 @@ class MainActivity extends AppCompatActivity with TypedFindView {
     val gridViewAdapter = new GridViewAdapter(MainActivity.this)
 
     if (gridViewAdapter.getCount > 0) {
-
+      /* SDカードに動画ファイルがあればサムネイルを表示する */
       gridView.setAdapter(gridViewAdapter)
 
     } else {
@@ -88,7 +86,7 @@ class MainActivity extends AppCompatActivity with TypedFindView {
         /* インテントにVideoPlayerActivityクラスと動画のIDを指定してVideoPlayerの画面を開く */
         val videoPlayerIntent = new Intent(MainActivity.this, classOf[VideoPlayerActivity])
         videoPlayerIntent.putExtra("id", parent.getItemIdAtPosition(position))
-        startActivityForResult(videoPlayerIntent, VIDEO_PLAYER_REQUEST_CODE)
+        startActivity(videoPlayerIntent)
       }
     })
 
